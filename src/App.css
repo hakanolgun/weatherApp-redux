@@ -2,8 +2,11 @@
   text-align: center;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
+  color: whitesmoke;
   justify-content: center;
   align-items: center;
+  gap: 3rem;
   background: rgb(52, 91, 113);
   background: radial-gradient(
     circle,

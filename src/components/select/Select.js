@@ -8,9 +8,6 @@ export default function Select() {
 
   const cities = useSelector((state) => state.weather.cities);
   const selectedCity = useSelector((state) => state.weather.selectedCity);
-  const weatherData = useSelector((state) => state.weather.weatherData);
-
-  console.log("weatherData", weatherData);
 
   useEffect(() => {
     async function deneme(lat, long, API_key) {
