@@ -1,6 +1,8 @@
+import styles from "./weathercontainer.module.css";
+
 export default function WeatherContainer() {
     return (
-        <div>
+        <div className={styles.weatherContainer}>
             weather container
         </div>
     )
