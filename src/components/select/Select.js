@@ -6,10 +6,12 @@ export default function Select() {
   const cities = useSelector((state) => state.weather.cities);
   const selectedCity = useSelector((state) => state.weather.selectedCity);
 
+
+
   return (
     <div>
       <select
-        value={selectedCity}
+        value={selectedCity.name}
         onChange={(e) => dispatch(selectCity(e.target.value))}
       >
         {cities.map((city, i) => {
