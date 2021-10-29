@@ -1,0 +1,35 @@
+.todayContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.leftInfoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+}
+.leftInfoContainer > * {
+  margin: 0;
+  padding: 0;
+}
+
+.todayTemp {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.rightInfoContainer {
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.rightInfoContainer > * {
+  margin: 0.4rem;
+  padding: 0;
+}

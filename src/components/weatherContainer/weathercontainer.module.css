@@ -1,6 +1,12 @@
-.weatherContainer{
-    background-color: #1c3c4d;
-    border: 3px solid #607f93;
-    border-radius: 10px;
-    padding: 2rem;
+.weatherContainer {
+  background-color: #1c3c4d;
+  border: 3px solid #607f93;
+  border-radius: 10px;
+  padding: 2rem 1rem;
+  min-width: 300px;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 2rem;
 }

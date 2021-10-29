@@ -1,15 +1,5 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import cities from "./citydata";
-
-export const getWeatherAsync = createAsyncThunk(
-  "weather/getWeatherAsync",
-  async (lat, long, API_key) => {
-    const res = await fetch(
-      `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=metric&exclude=current,minutely,hourly,alerts&appid=${API_key}`
-    );
-    return await res.json();
-  }
-);
 
 export const WeatherSlice = createSlice({
   name: "weather",
@@ -40,19 +30,7 @@ export const WeatherSlice = createSlice({
       state.weatherData = action.payload;
     },
   },
-  extraReducers: {
-    // get Country Data
-    [getWeatherAsync.pending]: (state, action) => {
-      state.isLoading = true;
-    },
-    [getWeatherAsync.fulfilled]: (state, action) => {
-      state.weatherData = action.payload;
-      state.isLoading = false;
-    },
-    [getWeatherAsync.rejected]: (state, action) => {
-      state.isLoading = false;
-    },
-  },
+  extraReducers: {},
 });
 
 export const { selectCity, changeData } = WeatherSlice.actions;
