@@ -3,7 +3,7 @@ import cities from "./citydata";
 
 export const getWeatherAsync = createAsyncThunk(
   "weather/getWeatherAsync",
-  async (selectedCity, lat, long, API_key) => {
+  async (lat, long, API_key) => {
     const res = await fetch(
       `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=metric&exclude=current,minutely,hourly,alerts&appid=${API_key}`
     );
@@ -36,6 +36,9 @@ export const WeatherSlice = createSlice({
         }
       }
     },
+    changeData: (state, action) => {
+      state.weatherData = action.payload;
+    },
   },
   extraReducers: {
     // get Country Data
@@ -46,12 +49,11 @@ export const WeatherSlice = createSlice({
       state.weatherData = action.payload;
       state.isLoading = false;
     },
-
     [getWeatherAsync.rejected]: (state, action) => {
       state.isLoading = false;
     },
   },
 });
 
-export const { selectCity } = WeatherSlice.actions;
+export const { selectCity, changeData } = WeatherSlice.actions;
 export default WeatherSlice.reducer;
