@@ -6,8 +6,6 @@ export default function Today() {
 
   if (weatherData !== null) {
     const todayData = weatherData[0];
-    console.log("TodayData", todayData);
-
     return (
       <div className={styles.todayContainer}>
         <div className={styles.leftInfoContainer}>
@@ -17,11 +15,13 @@ export default function Today() {
           />
           <p>{todayData.weather[0].main}</p>
         </div>
-        <div className={styles.todayTemp}>{Math.ceil(todayData.temp.day)}&#176;C</div>
+        <div className={styles.todayTemp}>
+          {Math.ceil(todayData.temp.day)} &#176;C
+        </div>
         <div className={styles.rightInfoContainer}>
           <p>Wind: {todayData.wind_speed} kmph</p>
-          <p>Precip:</p>
-          <p>Pressure: {todayData.pressure}</p>
+          <p>Precip: {todayData.rain} mm</p>
+          <p>Pressure: {todayData.pressure} mb</p>
         </div>
       </div>
     );

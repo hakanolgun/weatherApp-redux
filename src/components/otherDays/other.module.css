@@ -1,0 +1,13 @@
+.otherDaysContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.otherDaysContainer img {
+  width: 70%;
+}
+.otherDaysContainer > * {
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+}

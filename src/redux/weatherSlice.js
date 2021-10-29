@@ -6,14 +6,9 @@ export const WeatherSlice = createSlice({
   initialState: {
     cities: cities,
     selectedCity: {
-      plaka: 55,
       name: "SAMSUN",
       lat: 41.292782,
       long: 36.33128,
-      northeast_lat: 41.344134,
-      northeast_long: 36.381205,
-      southwest_lat: 41.235002,
-      southwest_long: 36.249519,
     },
     isLoading: false,
     weatherData: null,
