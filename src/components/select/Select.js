@@ -1,3 +1,4 @@
+import styles from "./select.module.css";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectCity, changeData } from "../../redux/weatherSlice";
@@ -23,7 +24,8 @@ export default function Select() {
 
   return (
     <div>
-      <select
+      <select 
+        className={styles.select}
         value={selectedCity.name}
         onChange={(e) => dispatch(selectCity(e.target.value))}
       >
